@@ -1,3 +1,6 @@
 
 关于 版本 特性的信息，可以在 ASF JIRA 上找到，比如3.0的信息
 https://issues.apache.org/jira/sr/jira.issueviews:searchrequest-printable/temp/SearchRequest.html?jqlQuery=statusCategory+%3D+done+AND+project+%3D+12315420+AND+fixVersion+%3D+12339177+ORDER+BY+priority+DESC%2C+key+ASC&tempMax=1000
+
+executor 和 task 源码解析：
+https://www.jianshu.com/p/3383aee17833
