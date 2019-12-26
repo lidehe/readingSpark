@@ -1,6 +1,13 @@
 
-关于 版本 特性的信息，可以在 ASF JIRA 上找到，比如3.0的信息
-https://issues.apache.org/jira/sr/jira.issueviews:searchrequest-printable/temp/SearchRequest.html?jqlQuery=statusCategory+%3D+done+AND+project+%3D+12315420+AND+fixVersion+%3D+12339177+ORDER+BY+priority+DESC%2C+key+ASC&tempMax=1000
+-- 关于 版本 特性的信息，可以在 ASF JIRA 上找到，比如3.0的信息
+        https://issues.apache.org/jira/sr/jira.issueviews:searchrequest-printable/temp/SearchRequest.html?jqlQuery=statusCategory+%3D+done+AND+project+%3D+12315420+AND+fixVersion+%3D+12339177+ORDER+BY+priority+DESC%2C+key+ASC&tempMax=1000
 
-executor 和 task 源码解析：
-https://www.jianshu.com/p/3383aee17833
+
+-- executor 和 task 源码解析：
+        简而言之：没有广播，数据会发到每个task，而task通常会有数千个，非常消耗资源
+                  有广播，数据会发送到executor，同一个executor里的所有task会共享这一份数据
+                  数据存储在内存或者磁盘上，不会导致内存溢出
+        https://github.com/JerryLead/SparkInternals/blob/master/markdown/7-Broadcast.md
+        https://www.jianshu.com/p/3383aee17833
+        https://blog.csdn.net/qq_35394891/article/details/82083028
+        https://www.cnblogs.com/jcchoiling/p/6538780.html
